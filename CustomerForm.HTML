@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Management</title>
+    <style>
+        /* Styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            /* Light gray background */
+            background-color: #f7f7f783; 
+        }
+        h2 {
+            text-align: center;
+            /* Purple heading color */
+            color: #6a00ff; 
+            margin-bottom: 30px;
+        }
+        form {
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 150px auto;
+            grid-row-gap: 10px;
+            /* White background */
+            background-color: #fff; 
+            padding: 20px;
+            border-radius: 10px;
+            /* Box shadow for form */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+        }
+        form label {
+            text-align: right;
+            padding-right: 10px;
+            /* Dark text color for labels */
+            color: #333; 
+        }
+        form input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Light gray background for input fields */
+            background-color: #f9f9f9; 
+        }
+        form button[type="submit"] {
+            width: 150px;
+            padding: 10px;
+            /* Blue submit button */
+            background-color: #007bff; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            /* Smooth transition */
+            transition: background-color 0.3s ease; 
+        }
+        form button[type="submit"]:hover {
+            /* Darker blue on hover */
+            background-color: #0056b3; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            /* White background */
+            background-color: #fff; 
+            border-radius: 10px;
+            /* Box shadow for table */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            /* Light gray background for table header */
+            background-color: #f2f2f29b; 
+        }
+        .action-buttons button {
+            margin-right: 5px;
+            cursor: pointer;
+            /* Blue action button */
+            background-color: cornflowerblue; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            /* Smooth transition */
+            transition: background-color 0.3s ease; 
+        }
+        .action-buttons button:hover {
+            /* Darker blue on hover */
+            background-color: #3c00b3; 
+        }
+        #product-button {
+            /* Dark purple button */
+            background-color: #070020; 
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            /* Smooth transition */
+            transition: background-color 0.3s ease; 
+        }
+        #product-button:hover {
+             /* Darker green on hover */
+        
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <!-- Form for adding a new customer -->
+    <h2>Customer Login</h2>
+    <form id="add-customer-form">
+        <label for="customer-name">Customer Name:</label>
+        <input type="text" id="customer-name" name="customer-name" required>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+        <label for="mobile-num">Mobile Number:</label>
+        <input type="text" id="mobile-num" name="mobile-num" required>
+        <button type="submit">Add Customer</button>
+    </form>
+
+    <!-- Table to display customer details -->
+    <h2>Customer Details</h2>
+    <table id="customer-table">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Mobile Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="customer-list">
+            <!-- Customer details will be populated here -->
+        </tbody>
+    </table>
+    <script src="CustomerForm.js"></script>
+</body>
+</html>

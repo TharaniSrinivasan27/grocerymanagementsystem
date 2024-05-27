@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales</title>
+    <style>
+        /* Styling for the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2; /* Light gray background for table headers */
+        }
+
+        /* Styling for the quantity input */
+        .quantity-input {
+            width: 50px;
+        }
+
+        /* Styling for the action buttons */
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .action-buttons button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        /* Styling for the addProductForm */
+        #addProductForm {
+            margin-top: 20px;
+        }
+        #addProductForm input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title and input fields for Sales ID and Date/Time -->
+    <h1>Selected Products</h1>
+    <div>
+        <label for="salesId">Sales ID:</label>
+        <input type="text" id="salesId" required>
+        <label for="curDateTime">Date and Time:</label>
+        <input type="datetime-local" id="curDateTime" required>
+        <label for="orderStatus">Order Status:</label>
+        <select id="orderStatus" name="orderStatus">
+            <option value="Pending">Pending</option>
+            <option value="Processing">Processing</option>
+            <option value="Shipped">Shipped</option>
+            <option value="Completed">Delivered</option>
+        </select>
+    </div>
+
+    <!-- Table to display selected products -->
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="selected-products-list">
+            <!-- Selected products will be inserted here dynamically -->
+        </tbody>
+    </table>
+
+    <!-- Total unit price and submit button -->
+    <p>Total Unit Price: <span id="totalPrice">0.00</span></p>
+    <button id="submitBtn">Calculate Total Unit Price</button>
+
+    <!-- Form to add a new product -->
+    <h2>Add New Product</h2>
+    <form id="addProductForm">
+        <input type="text" id="newProductId" placeholder="Product ID" required>
+        <input type="text" id="newProductName" placeholder="Product Name" required>
+        <input type="text" id="newProductCategory" placeholder="Category" required>
+        <input type="number" id="newProductPrice" placeholder="Price" step="0.01" required>
+        <input type="number" id="newProductQuantity" placeholder="Quantity" value="1" min="1" required>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <!-- JavaScript file -->
+    <script src="sales.js"></script>
+</body>
+</html>

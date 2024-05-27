@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <style>
+        /* CSS styles for the form */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        h2 {
+            text-align: center;
+            /* Red color for heading */
+            color: #ff0040; 
+            margin-bottom: 30px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            /* White background for the form */
+            background-color: #fff; 
+            padding: 20px;
+            border-radius: 10px;
+            /* Box shadow for a slight elevation effect */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            /* Dark text color for labels */
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"],
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            /* Light gray background color for input fields */
+            background-color: #f9f9f99e; 
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            /* Blue color for focus outline */
+        
+            border-color: #007bff; 
+        button[type="submit"] {
+            /* Red color for button background */
+            background-color: #ff0062; 
+            /* White text color for button */
+            color: white; 
+            cursor: pointer;
+            /* Smooth transition for hover effect */
+            transition: background-color 0.3s ease; 
+        }
+        button[type="submit"]:hover {
+            /* Dark blue color for hover effect */
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Add Product</h2>
+    <!-- Form for adding a new product -->
+    <form id="add-product-form">
+        <!-- Input field for product name -->
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <!-- Input field for category -->
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" required>
+
+        <!-- Input field for price -->
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+
+        <!-- Input field for availability -->
+        <label for="availability">Availability:</label>
+        <select id="availability" name="availability" required>
+            <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
+        </select>
+
+        <!-- Button to submit the form -->
+        <button type="submit">Add Product</button>
+    </form>
+
+    <!-- JavaScript file for handling form submission -->
+    <script src="ProductForm.js"></script>
+</body>
+</html>

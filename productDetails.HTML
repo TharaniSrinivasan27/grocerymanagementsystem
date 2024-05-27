@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #product-list tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #product-list tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Details</h2>
+    <!-- Table to display product details -->
+    <table id="product-table">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Availability</th> 
+                <th>Actions</th>
+                <th>selection</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+            <!-- Product details will be populated here dynamically -->
+        </tbody>
+    </table>
+    <!-- Button for billing -->
+    <button id="billing-button">Billing</button>
+
+    <!-- JavaScript file for handling product details -->
+    <script src="ProductDetails.js"></script>
+</body>
+</html>
