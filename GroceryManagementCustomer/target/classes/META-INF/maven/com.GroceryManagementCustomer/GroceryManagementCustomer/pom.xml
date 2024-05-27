@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element of the Maven POM (Project Object Model) file -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<!-- Specifies the model version for the POM -->
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Specifies the parent POM that this project inherits from -->
+	<parent>
+		<!-- Group ID of the parent project -->
+		<groupId>org.springframework.boot</groupId>
+		<!-- Artifact ID of the parent project -->
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<!-- Version of the parent project -->
+		<version>3.2.5</version>
+		<!-- Relative path to the parent POM (empty for lookup from repository) -->
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<!-- Group ID for this project -->
+	<groupId>com.GroceryManagementCustomer</groupId>
+	<!-- Artifact ID for this project -->
+	<artifactId>GroceryManagementCustomer</artifactId>
+	<!-- Version of this project -->
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- Name of this project -->
+	<name>GroceryManagementCustomer</name>
+	<!-- Description of this project -->
+	<description>customer microservice</description>
+
+	<!-- Properties used in the project -->
+	<properties>
+		<!-- Java version to be used -->
+		<java.version>17</java.version>
+		<!-- Spring Cloud version to be used -->
+		<spring-cloud.version>2023.0.1</spring-cloud.version>
+	</properties>
+
+	<!-- Dependencies for this project -->
+	<dependencies>
+		<!-- Spring Boot starter for JPA (Java Persistence API) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- Spring Boot starter for Thymeleaf (template engine) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<!-- Spring Boot starter for building web applications -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Spring Cloud starter for Eureka client (service discovery) -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- Spring Boot DevTools for developer productivity -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- MySQL JDBC driver for connecting to MySQL database -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- Spring Boot starter for testing applications -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Spring Boot starter for Actuator (monitoring and management) -->
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+   			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<!-- Dependency management for importing dependencies -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- Spring Cloud dependency management -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- Build configuration for the project -->
+	<build>
+		<plugins>
+			<!-- Spring Boot Maven plugin for building Spring Boot applications -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
