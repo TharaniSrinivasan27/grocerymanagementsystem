@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML declaration specifying the version and encoding of the XML file -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- Root element of the Maven Project Object Model (POM) -->
+
+	<modelVersion>4.0.0</modelVersion>
+	<!-- Version of the model used for the POM -->
+
+	<parent>
+		<!-- Information about the parent project -->
+		<groupId>org.springframework.boot</groupId>
+		<!-- Group ID of the parent project -->
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<!-- Artifact ID of the parent project -->
+		<version>3.2.5</version>
+		<!-- Version of the parent project -->
+		<relativePath/> <!-- lookup parent from repository -->
+		<!-- Path to the parent project if it's located locally -->
+	</parent>
+
+	<groupId>com.GroceryManagementUser</groupId>
+	<!-- Group ID of the current project -->
+	<artifactId>GroceryManagementUser</artifactId>
+	<!-- Artifact ID of the current project -->
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- Version of the current project -->
+	<name>GroceryManagementUser</name>
+	<!-- Name of the current project -->
+	<description>User microservice for login</description>
+	<!-- Description of the current project -->
+
+	<properties>
+		<!-- Project-wide properties -->
+		<java.version>17</java.version>
+		<!-- Java version used for the project -->
+		<spring-cloud.version>2023.0.1</spring-cloud.version>
+		<!-- Version of Spring Cloud used for the project -->
+	</properties>
+
+	<dependencies>
+		<!-- Dependencies required for the project -->
+		<dependency>
+			<!-- Spring Boot starter for JPA (Java Persistence API) -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Spring Boot starter for Thymeleaf -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Spring Boot starter for web applications -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Spring Cloud starter for Eureka client -->
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Spring Boot devtools for development -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<!-- MySQL Connector/J for MySQL database connectivity -->
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<!-- Spring Boot starter for Actuator -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Spring Boot starter for security -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<!-- Spring Boot starter for testing -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<!-- Dependency management section -->
+		<dependencies>
+			<!-- Importing Spring Cloud dependencies -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<!-- Build configuration -->
+		<plugins>
+			<!-- Maven plugin for building Spring Boot applications -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

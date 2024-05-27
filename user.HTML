@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        /* Styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a0091f06;
+            margin: 0;
+            padding: 0;
+        }
+        /* Styling for the container */
+        .container {
+            width: 25%;
+            margin: 50px auto;
+            background-color: #ffffffef;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(203, 49, 49, 0.1);
+        }
+        /* Styling for the heading */
+        h1 {
+            text-align: center;
+        }
+        /* Styling for labels */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        /* Styling for input and select elements */
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #a82727b8;
+            border-radius: 5px;
+        }
+        /* Styling for the button */
+        button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            background-color: #ff00224b;
+            color: #fffffffe;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* Styling for button hover */
+        button:hover {
+            background-color: #b3003c;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the form -->
+    <div class="container">
+        <!-- Heading -->
+        <h1>Welcome to Grocery Management System!!</h1>
+        <!-- Form for user authentication -->
+        <form onsubmit="validateForm(event)">
+            <!-- Username input field -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            <!-- Password input field -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            <!-- Role selection dropdown -->
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <!-- Submit button -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- JavaScript file for form validation -->
+    <script src="user.js"></script>
+</body>
+</html>
